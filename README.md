@@ -18,10 +18,8 @@ Plugin for chat control and filtering
 
 
 🌐 **Permissions:**
-
-Permission	Description	Status
-criex.nochat	Enable cooldowns	Default
-criex.nocommandchat	Bypass the cooldowns	OP
+ - criex.chat.nochat - enable cooldowns (default: true)
+ - criex.chat.nocommand.chat - bypass cooldowns (defualt: op)
 
 
 ⛓ **Config:**
