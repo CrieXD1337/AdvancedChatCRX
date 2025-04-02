@@ -1,0 +1,18 @@
+name: AdvancedChatCRX
+main: me.criex.AdvancedChatCRX
+version: 1.0
+api:
+  - 3.0.0
+  - 4.0.0
+  - 5.0.0
+authors: Criex
+description: "An advanced chat plugin with anti-spam, cooldown, and advertisement filtering features."
+website: "https://cloudburstmc.org/members/criex1337.51189/"
+
+permissions:
+  criex.nochat:
+    default: true
+    description: "Allows the player to send messages in chat."
+  criex.nocmdchat:
+    default: op
+    description: "Allows the player to bypass the chat cooldown and spam protection."
