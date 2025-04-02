@@ -8,6 +8,9 @@ max-message-length: 180
 # Message sending cooldown in milliseconds
 chat-cooldown-ms: 3000
 
+# Enable replace "@" to "?"
+replace-at-symbol: true
+
 # Others:
 max-spam-count: 3
 max-command-spam-count: 2
