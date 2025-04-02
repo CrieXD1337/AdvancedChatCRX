@@ -25,6 +25,8 @@ public class AdvancedChatCRX extends PluginBase implements Listener {
     private int maxSpamCount;
     private int maxCommandSpamCount;
 
+    private boolean replaceAtSymbol;
+
     private String noPermissionMessage;
     private String maxLengthMessage;
     private String advertisementProhibitedMessage;
@@ -57,6 +59,7 @@ public class AdvancedChatCRX extends PluginBase implements Listener {
         chatCooldown = getConfig().getLong("chat-cooldown-ms", 3000);
         maxSpamCount = getConfig().getInt("max-spam-count", 3);
         maxCommandSpamCount = getConfig().getInt("max-command-spam-count", 2);
+        replaceAtSymbol = getConfig().getBoolean("replace-at-symbol", true);
     }
 
     private void loadMessages() {
@@ -81,7 +84,6 @@ public class AdvancedChatCRX extends PluginBase implements Listener {
 
         String filteredMessage = filterSymbols(message);
 
-        // Command check
         if (message.startsWith("/")) {
             handleCommandSpam(player);
             event.setMessage(filteredMessage);
@@ -123,7 +125,7 @@ public class AdvancedChatCRX extends PluginBase implements Listener {
         Player player = event.getPlayer();
         String message = event.getMessage();
 
-        if (!player.hasPermission("criex.nocmdchat") && !player.isOp()) {
+        if (!player.hasPermission("criex.nochat") && !player.isOp()) {
             player.sendMessage(TextFormat.colorize(noPermissionMessage));
             event.setCancelled(true);
             return;
@@ -156,12 +158,12 @@ public class AdvancedChatCRX extends PluginBase implements Listener {
                     (c >= '0' && c <= '9') ||
                     "!#$&*()|[] ,./~<>-:?^ё+=".indexOf(c) != -1) {
                 result.append(c);
-            } else if (c == '@') {
+            } else if (c == '@' && replaceAtSymbol) { 
                 result.append('?');
             } else if (c == '{') {
                 result.append('_');
             } else if (c == '§') {
-                // Пропускаем
+                // skip
             } else {
                 result.append('_');
             }
