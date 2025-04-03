@@ -76,7 +76,7 @@ public class AdvancedChatCRX extends PluginBase implements Listener {
         Player player = event.getPlayer();
         String message = event.getMessage();
 
-        if (!player.hasPermission("criex.nochat") && !player.isOp()) {
+        if (!player.hasPermission("criex.nocommandchat") && !player.isOp()) {
             player.sendMessage(TextFormat.colorize(noPermissionMessage));
             event.setCancelled(true);
             return;
