@@ -2,6 +2,9 @@
 ###----------by Criex---------###
 # Created just for free use :3 #
 
+# Config version, do not edit
+version: 1
+
 # Maximum number of characters in a message
 max-message-length: 180
 
