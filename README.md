@@ -88,4 +88,8 @@ messages:
   command-spam-warning: "&ePlease, do not spam!"
 ```
 
-Example: 
+🔨 **Build:**
+If you want to rewrite the plugin in your own way - no problem. Download the source code with the command `git clone https://github.com/CrieXD1337/AdvancedChatCRX.git `Then, after making changes, compile the plugin with the command `mvn package`, after compilation the .jar file will be in `~/target/...`
+
+⛔ **Bugs:**
+If you encounter a bug, please write about it in https://github.com/CrieXD1337/AdvancedChatCRX/issues
